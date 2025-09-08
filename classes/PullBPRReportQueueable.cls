@@ -70,6 +70,8 @@ public class PullBPRReportQueueable implements Queueable, Database.AllowsCallout
                 dR.OneScore_Type__c = efxBPRobj.OneScore_Type__c;
                 dR.PG_OneScore_Values__c = efxBPRobj.PG_OneScore_Values__c;
                 
+                dr.Equifax_Blended_Report__c = efxBPRobj.Id;
+                
                 CreditReviewReport__c cs = CreditReviewReport__c.getInstance();
                 String bprStatus = '<br/> Initiating Blended Report pull <br/> Blended Report retrieved successfully. <br/>';
                 cs.Paynet_Report_Status__c = cs.Paynet_Report_Status__c != null ? (cs.Paynet_Report_Status__c + bprStatus) : bprStatus;
